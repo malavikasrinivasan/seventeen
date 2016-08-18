@@ -48,25 +48,8 @@ def computer_turn(marbles_in_jar, last_human_choice, strategy_type=1):
         choice = last_human_choice
 
     # Always win case
-    # Ensure that the human always has to pick from the nearest odd number
-    # TODO : This does not work, think about this. Maybe multiples of four?
     # if strategy_type == 3:
-    #     for i in range(1, 4):
-    #         diff = marbles_in_jar - i
-    #         print(diff)
-    #         # Nearest odd number
-    #         if diff != 5:
-    #             if diff % 2 != 0:
-    #                 if marbles_in_jar > 5:
-    #                     choice = i
-    #                     break
-    #                 # If less than five, pick n-1 marbles
-    #                 # 4 -> 3, 3 -> 2, 2 -> 1 to force the human to pick the last marble
-    #                 else:
-    #                     choice = marbles_in_jar - 1
-    #                     break
-    #         else:
-    #             choice = 3
+
 
     # Computer turn messaging
     print("Computer's turn...")
@@ -89,6 +72,8 @@ def check_jar(next_player, marbles_in_jar):
 
 def play_seventeen():
     """ Game play
+        Human goes first, followed by the computer
+        They take turns until there are no marbles present in the jar
     """
     marbles_in_jar = 17
     stock_msg = "Number of marbles left in jar : "
